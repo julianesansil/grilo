@@ -11,7 +11,7 @@ O projeto se divide em duas partes:
 
 - Grilo
     - Aplicação feita em HTML5 com AngularJS e Angular Material que o torna apto para acesso em plataformas móveis como Android e IOS
-    - Pode ser exibida em qualquer navegador (browser) ou "compilada" para Android ou IOS utilizando o phonegap ou cordova
+    - Pode ser exibida em qualquer navegador (browser) ou "compilada" para Android/IOS utilizando o phonegap ou cordova
 
 ### Instalação
 Requisitos: Apache, PHP e PostgreSQL
