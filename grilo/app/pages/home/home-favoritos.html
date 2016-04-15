@@ -1,0 +1,31 @@
+<md-content style="padding-top: 10px;background-color: rgb(220, 222, 227);">
+    <md-tabs md-stretch-tabs="always" md-dynamic-height="" md-border-bottom="">
+
+        <md-tab label="Proponentes">
+            <span ng-if="!proponentesFavoritos.length">
+                <br>
+                <b>Você não tem nenhum proponente favoritado ainda.</b>
+                <br><br>
+                Para favoritar um proponente, escolha uma área de atuação na aba anterior. Veja os seus proponentes. 
+                <br>
+                <b>Clique na estrelinha dos que lhe interessar. :)</b>
+            </span>
+
+            <ng-include src="'app/pages/home/home-favoritos-proponentes.html'" ng-if="proponentesFavoritos.length"/>
+        </md-tab>
+
+        <md-tab label="Convênios">
+            <span ng-if="!conveniosFavoritos.length">
+                <br>
+                <b>Você não tem nenhum convênio favoritado ainda.</b>
+                <br><br>
+                Para favoritar um convênio, escolha uma área de atuação na aba anterior. Em seguida, veja um proponente e os seus convênios. 
+                <br>
+                <b>Clique na estrelinha dos que lhe interessar. :)</b>
+            </span>
+
+            <ng-include src="'app/pages/home/home-favoritos-convenios.html'" ng-if="conveniosFavoritos.length"/>
+        </md-tab>
+
+    </md-tabs>
+</md-content>

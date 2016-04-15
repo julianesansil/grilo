@@ -1,0 +1,66 @@
+<div ng-if="carregado && !gastos">
+    <br>
+    Nenhum repasse/gasto foi encontrado.
+</div>
+
+<div class="margin8" layout="row" layout-align="center center" ng-if="erro">
+    <br>
+    Falha de conexão.
+
+    <md-button onclick="location.reload();" class="md-raised md-primary">
+        Tente novamente
+    </md-button>
+    <br>
+</div>
+
+
+<md-content ng-style="{'background': areaAtuacao.cor}" ng-if="carregado && gastos">
+
+    <div layout="row" style='margin-top: -3px'>
+        <div flex="90">
+            <div layout="column" style='margin-top: -3px'>
+                <div class='margin8'>
+                    Convênio nº: {{convenio.numero_interno}}
+                </div>
+                <div class='margin8'>
+                    {{convenio.objeto| primeiraMaiuscula | limitTo: 100}}<span>... &nbsp;
+                        <a href="javascript:;" ng-click="mostrarObjetoConvenio()"> Ver mais</a>
+                    </span>
+                </div>
+
+                <h6 class='margin8'>
+                    Valor: <b>{{convenio.valor_global| currency}}</b>
+                    <br>
+                    Órgão concedente: {{convenio.nome_orgao_concendente| camelCase}}
+                </h6>
+            </div>
+        </div>
+        <div style='min-width: 10px; margin-top: 10px; margin-left: 0px; margin-right: 0px;'>
+            <i class="material-icons" ng-click="favoritarOuDesfavoritarConvenio(convenio)" style="{{convenio.corEstrela}} outline: none;">star</i>
+        </div>
+    </div>
+
+</md-content>
+
+<md-content style="padding-top: 10px;background-color: rgb(220, 222, 227);">
+    <md-card ng-repeat="item in gastos" ng-style="$index == 0 ? {'margin-top': '0px'} : false" style="padding-left: 8px;padding-right: 8px">   
+        <md-card-title>
+            <md-card-title-text layout="row">
+                <div style="margin-top: 10px;">
+                    <span class="md-subhead small-gray">
+                        {{item.data| date: 'dd/MM/yyyy'}}
+                    </span>
+                </div>
+            </md-card-title-text>
+            <md-card-title-media>
+                <div layout="column" class="md-media-sm card-media" style='margin-top: 0px'>
+                    <div class='margin8'>
+                        {{item.observacao}}
+                    </div>
+                    <div class='margin8'>
+                        Valor: <b>{{item.valor| currency}}</b>
+                    </div>
+                </div>
+        </md-card-title>
+    </md-card>
+</md-content>

@@ -1,0 +1,141 @@
+body {
+    font-family: 'Roboto';
+}
+
+button.md-primary {
+    background-color: #3f51b5;
+}
+
+button.md-no-style {
+    padding: 0px;
+}
+
+md-select, md-select-label  {
+    width: 100%;
+}
+
+md-whiteframe {
+    background: #fff;
+    margin: 1px;
+    height: 100px; 
+    background-color: #c8e4fa;
+}
+
+md-tabs md-tabs-wrapper{
+    background-color: #f3f3f3;
+}
+
+md-grid-tile-footer figcaption {
+    width: 94%;
+    text-align: right;
+}
+
+md-list-item.md-3-line .md-list-item-text h3 {
+    line-height: inherit;
+}
+
+.text-center { 
+    text-align : center;
+}
+
+.wrapper {
+    margin:auto;
+}
+
+.back-menu,.top-info {
+    background-color: #3f51b5;
+    color: #fff;
+    width: auto;
+}
+
+.btn-size {
+    width: 95%;
+}
+
+.gridListdemoBasicUsage md-grid-list {
+    margin: 8px;
+}
+
+.gridListdemoBasicUsage md-grid-tile {
+    transition: all 400ms ease-out 50ms;
+}
+
+.margin8 {
+    margin: 8px;
+}
+
+.toolbardemoScrollShrink .face {
+    width: 48px;
+    margin: 16px;
+    border-radius: 48px;
+    border: 1px solid #ddd;
+}
+
+.btn-action{
+    text-transform: capitalize;
+    font-weight: normal;
+}
+
+.smallT{
+    color:#A5A0A0;
+    margin-top: -15px;
+    /*font-weight: bold;*/
+}
+.small-gray{
+    color:#A5A0A0;
+    font-size: 12px;
+    /*font-weight: bold;*/
+}
+.titulo{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.badgearea{
+    background-color: rgb(224,224,224);
+    border-radius: 50px;
+    padding: 5px 10px;
+    margin-left: 10px;
+    white-space: nowrap;
+}
+
+.infoprop{
+    font-size: 12px;
+    white-space: normal;
+    text-align: left;
+    line-height: 16px;
+}
+.titulohome{
+    margin-top: -5px;
+}
+
+@media screen and (min-width: 380px) {
+    .tituloArea{
+        font-size: 17px;
+    }
+}
+
+.gray{
+    color:#A5A0A0;
+}
+
+.fabSpeedDialdemoBasicUsage .text-capitalize {
+  text-transform: capitalize;
+}
+
+.fabSpeedDialdemoBasicUsage .md-fab:hover, .fabSpeedDialdemoBasicUsage .md-fab.md-focused {
+  background-color: #000 !important;
+}
+
+.fabSpeedDialdemoBasicUsage p.note {
+  font-size: 1.2rem;
+}
+
+.fabSpeedDialdemoBasicUsage .lock-size {
+  min-width: 300px;
+  min-height: 300px;
+  width: 300px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto; 
+}

@@ -1,0 +1,29 @@
+<div class="gridListdemoBasicUsage" >
+    <md-grid-list md-cols="4" md-cols-gt-sm="9" md-row-height="1:1" md-row-height-gt-sm="4:5" md-gutter="5px">
+
+        <md-grid-tile md-colspan="4" md-colspan-gt-sm="3" ng-style="{'background': '#FF8A80'}" ng-if="areasAtuacao.lista" ng-click="goArea('/proponentes', {id: 'T'})">
+            <md-grid-tile-content >
+                <p class="tituloArea">Todas</p>
+            </md-grid-tile-content>
+
+            <md-grid-tile-footer style="height: 30px; font-size: 12px">
+                <span style='position: absolute; left: 13px'>
+                    {{areasAtuacao.total.totalProponentes}} proponentes
+                </span>
+
+                {{areasAtuacao.total.valorTotalAreas | currency}}
+            </md-grid-tile-footer>
+        </md-grid-tile>
+
+        <md-grid-tile ng-repeat="item in areasAtuacao.lista" md-colspan="2" md-colspan-gt-sm="3" ng-style="{'background': item.cor}" ng-click="goArea('/proponentes', item)">
+            <md-grid-tile-content>
+                <p class="tituloArea"> {{item.descricao | camelCase}}</p>
+            </md-grid-tile-content>
+
+            <md-grid-tile-footer style="height: 30px; font-size: 12px">
+                {{item.valor_total | currency}}
+            </md-grid-tile-footer>
+        </md-grid-tile>
+
+    </md-grid-list>
+</div>

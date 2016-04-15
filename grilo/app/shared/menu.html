@@ -1,0 +1,17 @@
+<md-toolbar class="animate-show">
+    <div class="md-toolbar-tools">
+        <span flex></span>
+        
+        <span ng-show="!!municipio"> 
+            {{municipio.nome| limitTo: 10}}<span ng-if="municipio.nome.length > 10">...</span> - {{estado}}
+        </span>
+        
+        <md-button class="md-primary" ng-click="mostrarDialogLocalizacao()">
+            <i class="material-icons" style="color:white">filter_list</i>
+        </md-button>
+
+        <md-button class="md-primary" ng-click="mostrarDialogSobre()">
+            <i class="material-icons" style="color:white">help_outline</i>
+        </md-button>
+    </div>
+</md-toolbar>

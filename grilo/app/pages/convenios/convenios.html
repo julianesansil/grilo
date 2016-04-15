@@ -1,0 +1,125 @@
+<div ng-if="carregado && !conveniosTela">
+    <br>
+    Nenhum convênio foi encontrado.
+</div>
+
+<div class="margin8" layout="row" layout-align="center center" ng-if="erro">
+    <br>
+    Falha de conexão.
+
+    <md-button onclick="location.reload();" class="md-raised md-primary">
+        Tente novamente
+    </md-button>
+    <br>
+</div>
+
+
+<md-content ng-style="{'background': areaAtuacao.cor}" ng-if="carregado && conveniosTela">
+    <div layout="row">
+        <div flex='90'>
+            <h4 class="margin8">{{proponente.nome | camelCase}}</h4>
+            <!--<h5 class="margin8">{{proponente.nome_esfera | camelCase}}</h5>-->
+            <h6 class="margin8">Responsável: {{proponente.nome_responsavel| camelCase}}</h6>
+            <div class="margin8">
+                Possui <b>{{proponente.total_convenios}} convênio<span ng-hide="proponente.total_convenio == '1'">s</span></b> em execução que soma<span ng-show="proponente.total_global > 1">m</span> <b>{{proponente.total_global | currency}}</b>.
+            </div>
+        </div>
+
+        <div flex='10'>
+            <div style='min-width: 10px; margin-top: 10px; margin-left: 0px; margin-right: 0px;'>
+                    <i class="material-icons" ng-click="favoritarOuDesfavoritarProponente(proponente)" style="{{proponente.corEstrela}} outline: none;">star</i>
+            </div>
+        </div>
+    </div>
+</md-content>
+
+<div layout="column" ng-if="carregado && conveniosTela" ng-cloak>
+    <md-content class="md-padding">
+        <md-autocomplete
+        md-search-text="query"
+        md-items="item in pesquisarQuery(query)"
+        md-item-text="item.display"
+        md-selected-item-change="acharQuery(item)"
+        placeholder="Pesquisar por número do convênio">
+        
+            <md-item-template>
+                <span md-highlight-text="query" md-highlight-flags="^i">
+                    {{item.display}}
+                </span>
+            </md-item-template>
+
+            <md-not-found>
+                Nenhum convênio com esse número foi encontrado
+            </md-not-found>
+        </md-autocomplete>
+    </md-content>
+</div>
+
+<md-content style="padding-top: 10px;background-color: rgb(220, 222, 227);">
+    <md-card ng-repeat="item in conveniosTela" ng-style="$index == 0 ? {'margin-top': '0px'} : false" style="padding-left: 8px;padding-right: 8px">   
+        <md-card-title>
+            <md-card-title-text layout="row">
+                <div flex='80' style="margin-top: 10px;">
+                    <span class="md-subhead small-gray">Convênio nº: {{item.numero_interno}}</span>
+                </div>
+
+                <div flex='10'>
+                    <div style="min-width: 10px; margin-top: 15px; margin-left: 0px; margin-right: 0px;">
+                        <i class="material-icons" ng-click="favoritarOuDesfavoritarConvenio(item)" style="{{item.corEstrela}} outline: none;">star</i>
+                    </div>
+                </div>
+
+                <div flex='10'>
+                    <md-button style='min-width: 10px; margin-top: 10px; margin-left: 0px; margin-right: 0px;' ng-click="go('/gastos', item)">
+                        <md-icon>
+                            <i class="material-icons">search</i>
+                        </md-icon>
+                    </md-button>
+                </div>
+            </md-card-title-text>
+
+            <md-card-title-media>
+                <div layout="column" class="md-media-sm card-media" style='margin-top: -10px'>
+                    <div class='margin8'>
+                        {{item.objeto | primeiraMaiuscula | limitTo: 100}}<span ng-if="item.objeto.length > 100">...</span>
+                    </div>
+                    <span class="margin8" title="Data de ínico e fim da vigência">
+                        <md-icon><i class="material-icons">date_range</i></md-icon>
+                        <span class="btn-action">
+                            {{item.data_inicio_vigencia | date: 'dd/MM/yyyy'}} - {{item.data_fim_vigencia| date: 'dd/MM/yyyy'}}
+                        </span>
+                    </span>
+                    <div class='margin8'>
+                        Valor: <b>{{item.valor_global| currency}}</b>
+                    </div>
+
+                </div>
+            </md-card-title-media>
+        </md-card-title>
+
+        <hr style="margin: 0px;">
+
+        <md-card-actions layout="row" layout-align="center center">
+            <md-button ng-click="comentar()">
+                <md-icon>
+                    <i class="material-icons">insert_comment</i>
+                </md-icon>
+                <span hide-sm class="btn-action">Comentar</span>
+            </md-button>
+
+            <md-button ng-click="denunciar()">
+                <md-icon>
+                    <i class="material-icons">email</i>
+                </md-icon>
+                <span hide-sm class="btn-action">Denunciar</span>
+            </md-button>
+
+            <md-button ng-click="compartilhar()">
+                <md-icon>
+                    <i class="material-icons">share</i>
+                </md-icon>
+                <span hide-sm class="btn-action">Compartilhar</span>
+            </md-button>
+        </md-card-actions>
+    </md-card>
+</md-content>

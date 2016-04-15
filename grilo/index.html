@@ -1,0 +1,59 @@
+<html lang="pt-br" ng-app="StarterApp">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+
+        <link rel="stylesheet" href="assets/angular-material/angular-material.min.css">
+        <link rel="stylesheet" href="assets/material/material.min.css">
+        <link rel="stylesheet" href="assets/css/font.css" />
+        <link rel="stylesheet" href="assets/material/icon.css">
+        <link rel="stylesheet" href="styles.css">
+
+        <!-- Angular Material Dependencies -->
+        <script src="assets/angular-1.5.0/angular.js"></script>
+        <script src="assets/angular-1.5.0/angular-animate.js"></script>
+        <script src="assets/angular-1.5.0/angular-aria.js"></script>
+        <script src="assets/angular-1.5.0/angular-route.min.js"></script>
+        <script src="assets/angular-1.5.0/angular-sanitize.js"></script>
+        <script src="assets/angular-1.5.0/angular-locale_pt-br.js"></script>
+
+        <!-- Angular Material -->
+        <script src="assets/angular-material/angular-material.min.js"></script>
+        <script src="assets/material/material.js"></script>
+
+        <script src="app/app.module.js"></script>
+        <script src="app/app.routes.js"></script>
+        <script src="app/app.services.js"></script>
+        <script src="app/app.filters.js"></script>
+        <script src="app/app.session.js"></script>
+        <script src="app/utils.js"></script>
+
+        <script src="app/pages/favoritos.js"></script>
+        <script src="app/pages/pesquisa.js"></script>
+
+        <script src="app/pages/home/home-controller.js"></script>
+        <script src="app/pages/proponentes/proponentes-controller.js"></script>
+        <script src="app/pages/convenios/convenios-controller.js"></script>
+        <script src="app/pages/gastos/gastos-controller.js"></script>
+    </head>
+
+    <body ng-controller="HomeController"  style="background-color: rgb(220, 222, 227);">
+        <div layout="row" layout-fill style="background-color: rgb(220, 222, 227);" >
+            <div layout="column" layout-fill style="max-width:800px; margin-left: auto; margin-right: auto;">
+                <!--<div ng-include="'app/shared/menu.html'" ng-if="displayHeader"> </div>-->
+                <div ng-include="'app/shared/menu.html'" ng-if="displayHeader"> </div>
+                <div ng-include="'app/shared/menu-back.html'" ng-if="showBackMenu"> </div>
+                
+                <div layout="row" layout-align="center center" ng-if="!carregado && !erro">
+                    <md-progress-circular md-mode="indeterminate"/>
+                </div>
+
+                <div ng-view autoscroll="true" > </div>
+            </div>
+        </div>
+
+        <script>
+            // setInterval("changeDocumentHeight()", 500);
+        </script>
+    </body>
+</html>

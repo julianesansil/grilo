@@ -1,0 +1,99 @@
+<div data-ng-init="init()">
+    <md-content style="padding-top: 10px;background-color: rgb(220, 222, 227);">
+        <md-tabs md-stretch-tabs="always" md-dynamic-height="" md-border-bottom="">
+            <md-tab label="aba1">
+                <md-tab-label>
+                    <i class="material-icons" style="color: black">dashboard</i>
+                </md-tab-label>
+
+                <md-content class="md-padding">
+                    <div class="margin8">
+                        <h4 class="titulohome">Áreas dos Proponentes</h4>
+                    </div>
+
+                    <div class="margin8" ng-if="estado && municipio && !erroArea">
+                        <div layout="row" layout-align="center center" ng-if="!carregadoArea">
+                            <md-progress-circular md-mode="indeterminate"/>
+                        </div>
+                        
+                        <span ng-if="carregadoArea && areasAtuacao.lista">
+                            Áreas de atuação dos proponentes com convênios em execução no município
+                        </span>
+                        <span ng-if="carregadoArea && !areasAtuacao.lista">
+                            Nenhuma área de atuação possui convênio em execução no município.
+                        </span>
+
+                        <ng-include src="'app/pages/home/home-filtro-area.html'" ng-if="carregadoArea"/>
+                    </div>
+
+                    <ng-include src="'app/pages/sem-conexao.html'" ng-if="erroArea"/>
+                </md-content>
+            </md-tab>
+
+            <md-tab label="aba2">
+                <md-tab-label>
+                    <i class="material-icons" style="color: black">star</i>
+                </md-tab-label>
+
+                <md-content class="">
+                    <div class="margin8">
+                        <h4 class="titulohome">Favoritos</h4>
+                        
+                        <span>
+                            Proponentes e convênios favoritados
+                        </span>
+                    </div>
+                    <ng-include src="'app/pages/home/home-favoritos.html'" ng-if="carregadoOBs"/>
+                </md-content>
+            </md-tab>
+
+            <md-tab label="aba3">
+                <md-tab-label>
+                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                    <path fill="#000000" d="M20.2,2H19.5H18C17.1,2 16,3 16,4H8C8,3 6.9,2 6,2H4.5H3.8H2V11C2,12 3,13 4,13H6.2C6.6,15 7.9,16.7 11,17V19.1C8.8,19.3 8,20.4 8,21.7V22H16V21.7C16,20.4 15.2,19.3 13,19.1V17C16.1,16.7 17.4,15 17.8,13H20C21,13 22,12 22,11V2H20.2M4,11V4H6V6V11C5.1,11 4.3,11 4,11M20,11C19.7,11 18.9,11 18,11V6V4H20V11Z" />
+                    </svg>
+                </md-tab-label>
+
+                <md-content class="">
+                    <div class="margin8">
+                        <h4 class="titulohome">Ranking</h4>
+                    </div>
+
+                    <div class="margin8">
+                        <span>
+                            Lista dos "3 mais", relacionados a proponentes e convênios em execução
+                        </span>
+
+                        <ng-include src="'app/pages/home/home-ranking.html'"/>
+                    </div>
+                </md-content>
+            </md-tab>
+
+            <md-tab label="aba4">
+                <md-tab-label>
+                    <i class="material-icons" style="color: black">credit_card</i>
+                </md-tab-label>
+
+                <md-content class="">
+                    <div class="margin8">
+                        <h4 class="titulohome">Feeds Bancários</h4>
+                    </div>
+
+                    <div class="margin8" ng-if="!erroOBs">
+                        <div layout="row" layout-align="center center" ng-if="!carregadoOBs">
+                            <md-progress-circular md-mode="indeterminate"/>
+                        </div>
+
+                        <span ng-if="carregadoOBs">
+                            Últimos repasses recebidos e gastos dos convênios
+                        </span>
+
+                        <ng-include src="'app/pages/home/home-feeds-bancarios.html'" ng-if="carregadoOBs"/>
+                    </div>
+
+                     <ng-include src="'app/pages/sem-conexao.html'" ng-if="erroOBs"/>
+                </md-content>
+            </md-tab>
+        </md-tabs>
+    </md-content>
+</div>

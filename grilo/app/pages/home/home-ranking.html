@@ -1,0 +1,108 @@
+<md-content style="padding-top: 10px;background-color: rgb(220, 222, 227);">
+    <md-tabs md-stretch-tabs="always" md-dynamic-height="" md-border-bottom="">
+    
+        <md-tab label="Municipal">
+            <div class="margin8" ng-if="!erroRankingMunicipal">
+                <div layout="row" layout-align="center center" ng-if="!carregadoRankingMunicipal">
+                    <md-progress-circular md-mode="indeterminate"/>
+                </div>
+
+                <span ng-if="!rankingMunicipal && carregadoRankingMunicipal">
+                    <br>
+                    Nenhum dado foi encontrado para o município.
+                </span>
+            </div>
+
+            <div class="margin8" layout="row" layout-align="center center" ng-if="erroRankingMunicipal">
+                <br>
+                Falha de conexão.
+
+                <md-button onclick="location.reload();" class="md-raised md-primary">
+                    Tente novamente
+                </md-button>
+            </div>
+
+
+            <md-card ng-repeat="item in rankingMunicipal" ng-style="$index==0?{'margin-top':'0px'}:false" style="padding-left: 8px; padding-right: 8px">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-subhead"><b>{{item.titulo}}</b></span>
+                    </md-card-title-text>
+
+                    <md-card-title-media>
+                        <div class="md-media-sm card-media">
+                            <md-content>
+                                <md-list>
+                                    <md-list-item class="md-3-line" ng-repeat="subitem in item.data">
+                                        <div class="md-list-item-text">
+                                            <p ng-bind-html="subitem | to_trusted"></p>
+                                        </div>
+    
+                                        <md-divider ng-if="!$last"></md-divider>
+                                    </md-list-item>
+                                </md-list>
+                            </md-content>
+
+                            <p>
+                                {{subitem.id}}
+                            </p>
+                        </div>
+                    </md-card-title-media>
+                </md-card-title>
+            </md-card>
+        </md-tab>
+
+        <md-tab label="Nacional">
+            <div class="margin8" ng-if="!erroRankingNacional">
+                <div layout="row" layout-align="center center" ng-if="!carregadoRankingNacional">
+                    <md-progress-circular md-mode="indeterminate"/>
+                </div>
+
+                <span ng-if="!rankingNacional && carregadoRankingNacional">
+                    <br>
+                    Nenhum dado foi encontrado para os municípios do país.
+                </span>
+            </div>
+
+            <div class="margin8" layout="row" layout-align="center center" ng-if="erroRankingNacional">
+                <br>
+                Falha de conexão.
+
+                <md-button onclick="location.reload();" class="md-raised md-primary">
+                    Tente novamente
+                </md-button>
+                <br>
+            </div>
+
+
+            <md-card ng-repeat="item in rankingNacional" ng-style="$index==0?{'margin-top':'0px'}:false" style="padding-left: 8px; padding-right: 8px">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-subhead"><b>{{item.titulo}}</b></span>
+                    </md-card-title-text>
+
+                    <md-card-title-media>
+                        <div class="md-media-sm card-media">
+                            <md-content>
+                                <md-list>
+                                    <md-list-item class="md-3-line" ng-repeat="subitem in item.data">
+                                        <div class="md-list-item-text">
+                                            <p ng-bind-html="subitem | to_trusted"></p>
+                                        </div>
+    
+                                        <md-divider ng-if="!$last"></md-divider>
+                                    </md-list-item>
+                                </md-list>
+                            </md-content>
+
+                            <p>
+                                {{subitem.id}}
+                            </p>
+                        </div>
+                    </md-card-title-media>
+                </md-card-title>
+            </md-card>
+        </md-tab>
+
+    </md-tabs>
+</md-content>

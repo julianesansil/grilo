@@ -1,0 +1,39 @@
+<md-dialog ng-cloak>
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Seja relevante! ;)</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="fechar()">
+                    <i class="material-icons">close</i>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div layout="column" >
+                <md-input-container>
+                    <label>Autor</label>
+                    <input ng-model="pessoaLogada" ng-disabled="true"/>
+                </md-input-container>
+
+                <md-input-container>
+                    <label>Comentário</label>
+                    <textarea ng-model="comentario" md-maxlength="150" rows="2" md-select-on-focus></textarea>
+                </md-input-container>
+				
+				<a href="">Anexar fotos</a>
+                *O comentário é de inteira responsabilidade do autor.
+                <md-input-container>
+                    <md-button ng-click="fechar()" class="md-raised md-primary" ng-disabled="!comentario">
+                        Enviar
+                    </md-button>
+
+                    <md-button ng-click="fechar()" class="md-raised md-default" ng-disabled="">
+                        Cancelar
+                    </md-button>
+                </md-input-container>
+            </div>
+        </md-dialog-content>
+    </form>
+</md-dialog>

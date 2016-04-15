@@ -1,0 +1,129 @@
+<div ng-if="carregado && !proponentesTela">
+    <br>
+    Nenhum proponente foi encontrado.
+</div>
+
+<div class="margin8" layout="row" layout-align="center center" ng-if="erro">
+    <br>
+    Falha de conexão.
+
+    <md-button onclick="location.reload();" class="md-raised md-primary">
+        Tente novamente
+    </md-button>
+    <br>
+</div>
+
+
+<!--<md-content ng-style="{'background': 'linear-gradient('+areaAtuacao.cor+', #DCDEE3)'};"  ng-if="carregado && proponentes">-->
+<md-content ng-style="{'background': areaAtuacao.cor};" ng-if="carregado && proponentesTela">
+    <h4 class="margin8">{{areaAtuacao.descricao | camelCase}}</h4>
+    <div class="margin8">
+        Possui <b>{{areaAtuacao.total}} proponente<span ng-show="areaAtuacao.total > 1">s</span></b> que soma<span ng-show="areaAtuacao.total > 1">m</span> <b>{{areaAtuacao.valor_total| currency}}</b><span ng-hide="areaAtuacao.id == 0 || areaAtuacao.id == 'T'"> nessa área</span>.
+    </div>
+</md-content>
+
+<div layout="column" ng-if="carregado && proponentesTela" ng-cloak>
+    <md-content class="md-padding">
+        <md-autocomplete
+        md-search-text="query"
+        md-items="item in pesquisarQuery(query)"
+        md-item-text="item.display"
+        md-selected-item-change="acharQuery(item)"
+        placeholder="Pesquisar por nome do proponente">
+        
+            <md-item-template>
+                <span md-highlight-text="query" md-highlight-flags="^i">
+                    {{item.display}}
+                </span>
+            </md-item-template>
+
+            <md-not-found>
+                Nenhum proponente com esse nome foi encontrado
+            </md-not-found>
+        </md-autocomplete>
+    </md-content>
+</div>
+
+<md-content style="padding-top: 10px; background-color: rgb(220, 222, 227);">
+    <md-card ng-repeat="item in proponentesTela" ng-style="$index == 0 ? {'margin-top': '0px'} : false" style="padding-left: 8px; padding-right: 8px">   
+        <md-card-title>
+            <md-card-title-text>
+                <div layout="row" style='margin-top: 10px'> 
+                    <div flex='80'>
+                        <p class="titulo">{{item.nome | camelCase}}</p>
+                    </div>
+
+                    <div flex='10'>
+                        <div style="min-width: 10px; margin-top: 15px; margin-left: 0px; margin-right: 0px;">
+                            <i class="material-icons" ng-click="favoritarOuDesfavoritarProponente(item)" style="{{item.corEstrela}} outline: none;">star</i>
+                        </div>
+                    </div>
+
+                    <div flex='10'>
+                        <md-button style='min-width: 10px; margin-top: 10px; margin-left: 0px; margin-right: 0px;' ng-click="go('/convenios', item)">
+                            <md-icon>
+                                <i class="material-icons">search</i>
+                            </md-icon>
+                        </md-button>
+                    </div>
+                </div>
+
+                <div layout="row"> 
+                    <p class="smallT">{{item.natureza_juridica | camelCase}}</p>
+                </div>
+            </md-card-title-text>
+
+            <md-card-title-media>
+                <div layout="column" class="md-media-sm card-media" style='margin-top: -10px'>
+                    <div class='margin8'>
+                        <p>Possui <b>{{item.total_convenios}} convênio<span ng-hide="item.total_convenios == '1'">s</span></b> em execução que somam <b>{{item.total_global| currency}}</b>.<span ng-if="item.area[0].descricao != 'Sem area'"><br> Atua na<span ng-show="item.area.length > 1">s</span> área<span ng-show="item.area.length > 1">s</span> de 
+                                <span ng-repeat="area in item.area">
+                                    <b>{{area.descricao| camelCase}}</b>{{(($index + 1) == (item.area.length - 1))?" e ":($index < (item.area.length - 1))?",":""}}</span>.
+                        </p></span>
+                    </div>
+
+                    <hr style="margin-top: 0px;">
+
+                    <md-button class='infoprop' ng-href="tel:{{item.telefone}}" target="_blank">
+                        <md-icon>
+                            <i class="material-icons">local_phone</i> 
+                        </md-icon>
+                        {{item.telefone}} 
+                    </md-button>
+
+                    <md-button  class='infoprop' ng-href="https://www.google.com/maps/search/{{item.endereco}}" target="_blank" style='margin-top: -10px'>
+                        <md-icon>
+                            <i class="material-icons">location_on</i> 
+                        </md-icon>
+                        {{item.endereco}}
+                    </md-button>
+                </div>
+            </md-card-title-media>
+        </md-card-title>
+
+        <hr style="margin: 0px;">
+
+        <md-card-actions layout="row" layout-align="center center">
+            <md-button ng-click="comentar()">
+                <md-icon>
+                    <i class="material-icons">insert_comment</i>
+                </md-icon>
+                <span hide-sm class="btn-action">Comentar</span>
+            </md-button>
+
+            <md-button ng-click="denunciar()">
+                <md-icon>
+                    <i class="material-icons">email</i>
+                </md-icon>
+                <span hide-sm class="btn-action">Denunciar</span>
+            </md-button>
+
+            <md-button ng-click="compartilhar()">
+                <md-icon>
+                    <i class="material-icons">share</i>
+                </md-icon>
+                <span hide-sm class="btn-action">Compartilhar</span>
+            </md-button>
+        </md-card-actions>
+    </md-card>
+</md-content>
