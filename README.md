@@ -1,6 +1,7 @@
 # Grilo
 
 **link demo**: http://cpro26850.publiccloud.com.br/grilo/
+**link do vídeo**: http://cpro26850.publiccloud.com.br/Grilo_-_Video_explicativo.mp4
 
 O projeto se divide em duas partes:
 - Webservice
