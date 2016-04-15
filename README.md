@@ -6,12 +6,12 @@
 
 O projeto se divide em duas partes:
 - Webservice
-    - Feito em linguagem PHP  para facilitar o consumo dos dados dos convênios para ser utilizado na aplicação.
+    - Feito em linguagem PHP  para facilitar o consumo dos dados dos convênios para ser utilizado na aplicação;
     - Foi utilizado o [dump](http://repositorio.dados.gov.br/economia-financas/encargos-financeiros/transferencias-financeiras/API_siconv_140515.zip) do banco de dados em PostgreSQL com a versão datada de 15/05/2014, fornecido pela [API de convênios](http://api.convenios.gov.br/siconv/doc/).
 
 - Grilo
-    - Aplicação feita em HTML5 com AngularJS e Angular Material que o torna apto para acesso em plataformas móveis como Android e IOS
-    - Pode ser exibida em qualquer navegador (browser) ou "compilada" para Android/IOS utilizando o phonegap ou cordova
+    - Aplicação feita em HTML5 com AngularJS e Angular Material que o torna apto para acesso em plataformas móveis como Android e iOS;
+    - Pode ser exibida em qualquer navegador (browser) ou "compilada" para Android/IOS utilizando o phonegap ou cordova.
 
 ### Instalação
 Requisitos: Apache, PHP e PostgreSQL
