@@ -18,9 +18,9 @@ Requisitos: Apache, PHP e PostgreSQL
 
 Baixe o projeto ou clone o repositório, baixe o dump do banco do SICONV [dump](http://repositorio.dados.gov.br/economia-financas/encargos-financeiros/transferencias-financeiras/API_siconv_140515.zip) em PostgreSQL.
 
-Copie os arquivos para o WWW do apache, pasta mp-ws é o serviço que será utilizado pela aplicação na pasta grilo.
+Copie os arquivos para o www do apache, pasta grilo-ws é o serviço que será utilizado pela aplicação na pasta grilo.
 
-Altere o arquivo conexao.php na pasta mp-ws com os dados de conexão ao banco de dados.
+Altere o arquivo conexao.php na pasta grilo-ws com os dados de conexão ao banco de dados.
 
 Acesse localhost/grilo para navegar na aplicação.
 
