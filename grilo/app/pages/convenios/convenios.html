@@ -17,11 +17,11 @@
 <md-content ng-style="{'background': areaAtuacao.cor}" ng-if="carregado && conveniosTela">
     <div layout="row">
         <div flex='90'>
-            <h4 class="margin8">{{proponente.nome| camelCase}}</h4>
+            <h4 class="margin8">{{proponente.nome | camelCase}}</h4>
             <!--<h5 class="margin8">{{proponente.nome_esfera | camelCase}}</h5>-->
-            <h6 class="margin8">Responsável: {{proponente.nome_responsavel| camelCase}}</h6>
+            <h6 class="margin8">Responsável: {{proponente.nome_responsavel | camelCase}}</h6>
             <div class="margin8">
-                Possui <b>{{proponente.total_convenios}} convênio<span ng-hide="proponente.total_convenio == '1'">s</span></b> em execução que soma<span ng-show="proponente.total_global > 1">m</span> <b>{{proponente.total_global| currency}}</b>.
+                Possui <b>{{proponente.total_convenios}} convênio<span ng-hide="proponente.total_convenio == '1'">s</span></b> em execução que soma<span ng-show="proponente.total_global > 1">m</span> <b>{{proponente.total_global | currency}}</b>.
             </div>
         </div>
 

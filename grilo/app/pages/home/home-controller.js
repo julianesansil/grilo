@@ -340,9 +340,10 @@ function DialogLocalizacaoController($scope, $mdDialog, Services, SessionStorage
 
     $scope.filtrar = function (municipio) {
         $mdDialog.hide();
-
         SessionStorage.setSession("estado", $scope.filtro.estado);
         SessionStorage.setSession("municipio", $scope.filtro.municipio);
+
+        $scope.mostrarDialogSobre();
 
         $scope.removeDadosHome();
         $scope.carregarView(municipio);

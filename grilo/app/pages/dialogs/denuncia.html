@@ -10,11 +10,14 @@
             </div>
         </md-toolbar>
 
-        <md-dialog-content>
-            <div layout="column" >
-                <md-input-container>
-                    <label>Autor</label>
-                    <input ng-model="anonimo" ng-disabled="true"/>
+        <md-dialog-content style="padding-bottom: 10px;">
+            <div layout="column">
+                <md-input-container class="md-icon-float ">
+                    <label style="margin-left: 0px">Autor</label>
+                    <md-select style="margin-top: 15px;padding-bottom: 0px;" ng-model="pessoaDenuncia" required="">
+                        <md-option>{{pessoaLogada}}</md-option>
+                        <md-option>{{anonimo}}</md-option>
+                    </md-select>
                 </md-input-container>
 
                 <md-input-container>
@@ -22,8 +25,12 @@
                     <textarea ng-model="comentario" rows="2" md-select-on-focus></textarea>
                 </md-input-container>
 				
-				<a href="">Anexar arquivos</a>
-                <md-input-container>
+				<a href="">Enviar arquivos</a>
+                A denúncia será enviada ao órgão compentente.
+                <br>
+                <i>*Futuramente, haverá possibilidade de acompanhamento de denúncia pelo app.</i>
+
+                <md-input-container style="padding-bottom: 0px; padding-top: 10px;">
                     <md-button ng-click="fechar()" class="md-raised md-primary" ng-disabled="!comentario">
                         Enviar
                     </md-button>

@@ -10,7 +10,7 @@
             </div>
         </md-toolbar>
 
-        <md-dialog-content>
+        <md-dialog-content style="padding-bottom: 10px;">
             <div layout="column" >
                 <md-input-container>
                     <label>Autor</label>
@@ -22,9 +22,10 @@
                     <textarea ng-model="comentario" md-maxlength="150" rows="2" md-select-on-focus></textarea>
                 </md-input-container>
 				
-				<a href="">Anexar fotos</a>
+				<a href="">Enviar fotos</a>
                 *O comentário é de inteira responsabilidade do autor.
-                <md-input-container>
+                
+                <md-input-container style="padding-bottom: 0px; padding-top: 10px;">
                     <md-button ng-click="fechar()" class="md-raised md-primary" ng-disabled="!comentario">
                         Enviar
                     </md-button>
