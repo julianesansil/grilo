@@ -12,9 +12,16 @@
 
         <md-dialog-content>
             <div layout="column" >
+                A denúncia será enviada ao órgão compentente (e, futuramente, haverá possibilidade de acompanhamento de denúncia pelo app).
+
                 <md-input-container>
                     <label>Autor</label>
                     <input ng-model="anonimo" ng-disabled="true"/>
+
+                    <md-select>
+                        <md-option ng-value="pessoaLogada"/>
+                        <md-option ng-value="anonimo"/>
+                    </md-select>
                 </md-input-container>
 
                 <md-input-container>

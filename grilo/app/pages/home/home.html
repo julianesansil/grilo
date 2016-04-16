@@ -9,6 +9,7 @@
                 <md-content class="md-padding">
                     <div class="margin8">
                         <h4 class="titulohome">Áreas dos Proponentes</h4>
+                        <i>Base de 15/05/2014</i>
                     </div>
 
                     <div class="margin8" ng-if="estado && municipio && !erroArea">
@@ -17,7 +18,9 @@
                         </div>
                         
                         <span ng-if="carregadoArea && areasAtuacao.lista">
-                            Áreas de atuação dos proponentes com convênios em execução no município
+                            <b>Áreas de atuação dos proponentes com convênios em execução no município.</b>
+                            <br>
+                            Para mais detalhes, clique na área  que lhe interessar.
                         </span>
                         <span ng-if="carregadoArea && !areasAtuacao.lista">
                             Nenhuma área de atuação possui convênio em execução no município.
@@ -38,9 +41,14 @@
                 <md-content class="">
                     <div class="margin8">
                         <h4 class="titulohome">Favoritos</h4>
-                        
+                        <i>Base de 15/05/2014</i>
+                    </div>
+                    
+                    <div class="margin8">    
                         <span>
-                            Proponentes e convênios favoritados
+                            <b>Proponentes e convênios favoritados.</b>
+                            <br>
+                            Você receberá notificações quando pessoas comentarem esses proponentes e convênios, mas é possível desativar as notificações.
                         </span>
                     </div>
                     <ng-include src="'app/pages/home/home-favoritos.html'" ng-if="carregadoOBs"/>
@@ -57,11 +65,12 @@
                 <md-content class="">
                     <div class="margin8">
                         <h4 class="titulohome">Ranking</h4>
+                        <i>Base de 15/05/2014</i>
                     </div>
 
                     <div class="margin8">
                         <span>
-                            Lista dos "3 mais", relacionados a proponentes e convênios em execução
+                            <b>Lista dos "3 mais", relacionados a proponentes e convênios em execução.</b>
                         </span>
 
                         <ng-include src="'app/pages/home/home-ranking.html'"/>
@@ -77,6 +86,7 @@
                 <md-content class="">
                     <div class="margin8">
                         <h4 class="titulohome">Feeds Bancários</h4>
+                        <i>Base de 15/05/2014</i>
                     </div>
 
                     <div class="margin8" ng-if="!erroOBs">
@@ -85,7 +95,9 @@
                         </div>
 
                         <span ng-if="carregadoOBs">
-                            Últimos repasses recebidos e gastos dos convênios
+                            <b>Últimos repasses recebidos e gastos dos convênios.</b>
+                            <i>*Na base que utilizamos só tinham dados dos repasses recebidos, mas no app final colocaremos os repasses e <b>os gastos dos convênios</b> também.</i>
+                            <i>*Por enquanto, só mostramos os repasses recebidos, mas no app final colocaremos os repasses e <b>os gastos dos convênios</b> também.</i>
                         </span>
 
                         <ng-include src="'app/pages/home/home-feeds-bancarios.html'" ng-if="carregadoOBs"/>
