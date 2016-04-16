@@ -15,7 +15,7 @@
                         <div layout="row" layout-align="center center" ng-if="!carregadoArea">
                             <md-progress-circular md-mode="indeterminate"/>
                         </div>
-                        
+
                         <span ng-if="carregadoArea && areasAtuacao.lista">
                             Áreas de atuação dos proponentes com convênios em execução no município
                         </span>
@@ -38,7 +38,7 @@
                 <md-content class="">
                     <div class="margin8">
                         <h4 class="titulohome">Favoritos</h4>
-                        
+
                         <span>
                             Proponentes e convênios favoritados
                         </span>
@@ -63,9 +63,9 @@
                         <span>
                             Lista dos "3 mais", relacionados a proponentes e convênios em execução
                         </span>
-
-                        <ng-include src="'app/pages/home/home-ranking.html'"/>
                     </div>
+                    <ng-include src="'app/pages/home/home-ranking.html'"/>
+
                 </md-content>
             </md-tab>
 
@@ -87,11 +87,10 @@
                         <span ng-if="carregadoOBs">
                             Últimos repasses recebidos e gastos dos convênios
                         </span>
-
-                        <ng-include src="'app/pages/home/home-feeds-bancarios.html'" ng-if="carregadoOBs"/>
                     </div>
+                    <ng-include src="'app/pages/home/home-feeds-bancarios.html'" ng-if="carregadoOBs"/>
 
-                     <ng-include src="'app/pages/sem-conexao.html'" ng-if="erroOBs"/>
+                    <ng-include src="'app/pages/sem-conexao.html'" ng-if="erroOBs"/>
                 </md-content>
             </md-tab>
         </md-tabs>
