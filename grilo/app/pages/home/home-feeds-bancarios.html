@@ -1,4 +1,4 @@
-<md-content style="padding-top: 10px;background-color: rgb(220, 222, 227);">
+<md-content style="padding-top: 10px; background-color: rgb(220, 222, 227);">
     <md-tabs md-stretch-tabs="always" md-dynamic-height="" md-border-bottom="">
 
         <md-tab label="Municipal">
@@ -7,7 +7,7 @@
                 Nenhum convênio em execução foi encontrado no município.
             </span>
 
-            <md-card ng-repeat="item in obsMunicipal" ng-style="$index==0?{'margin-top':'0px'}:false" style="padding-left: 8px;padding-right: 8px">
+            <md-card ng-repeat="item in obsMunicipal" ng-style="$index == 0? {'margin-top':'0px'} : false" style="padding-left: 8px; padding-right: 8px">
                 <md-card-title>
                     <md-card-title-text>
                         <div layout="row" style='margin-top: 10px'> 
@@ -30,9 +30,9 @@
                     <md-card-title-media>
                         <div class="md-media-sm card-media">
                             <p>
-                                <b>{{item.nome_proponente| camelCase}}</b>
-                                recebeu <b>{{item.valor_ob| currency}}</b>
-                                para o convênio "{{item.objeto_convenio| primeiraMaiuscula | limitTo: 50}}<span ng-if="item.objeto_convenio.length > 50">...</span>".
+                                <b>{{item.nome_proponente | camelCase}}</b>
+                                recebeu <b>{{item.valor_ob | currency}}</b>
+                                para o convênio "{{item.objeto_convenio | primeiraMaiuscula | limitTo: 50}}<span ng-if="item.objeto_convenio.length > 50">...</span>".
                             </p>
                         </div>
                     </md-card-title-media>
@@ -50,7 +50,7 @@
                     <md-card-title-text>
                         <div layout="row" style='margin-top: 10px'> 
                             <div flex='90'>
-                                <span class="md-subhead small-gray">{{item.data_ob| date: 'dd/MM/yyyy'}}</span>
+                                <span class="md-subhead small-gray">{{item.data_ob | date: 'dd/MM/yyyy'}}</span>
                                 <div flex></div>
                                 <span class="md-subhead small-gray">Convênio nº: {{item.numero_interno_convenio}}</span>
                             </div>
@@ -68,33 +68,14 @@
                     <md-card-title-media>
                         <div class="md-media-sm card-media">
                             <p>
-                                <b>{{item.nome_proponente| camelCase}}</b>
-                                recebeu <b>{{item.valor_ob| currency}}</b>
-                                para o convênio "{{item.objeto_convenio| primeiraMaiuscula | limitTo: 50}}<span ng-if="item.objeto_convenio.length > 50">...</span>".
+                                <b>{{item.nome_proponente | camelCase}}</b>
+                                recebeu <b>{{item.valor_ob | currency}}</b>
+                                para o convênio "{{item.objeto_convenio | primeiraMaiuscula | limitTo: 50}}<span ng-if="item.objeto_convenio.length > 50">...</span>".
                             </p>
                         </div>
                     </md-card-title-media>
                 </md-card-title>
             </md-card>
-<!--
-            <md-card ng-repeat="item in obsNacional" ng-style="$index==0?{'margin-top':'0px'}:false" style="padding-left: 8px;padding-right: 8px">
-                <md-card-title>
-                    <md-card-title-text>
-                        <span class="md-subhead">Processo: {{item.numero_interno_convenio}}</span>
-                        <span class="md-subhead">Data do repasse: {{item.data_ob| date: 'dd/MM/yyyy'}}</span>
-                    </md-card-title-text>
-
-                    <md-card-title-media>
-                        <div class="md-media-sm card-media">
-                            <p>
-                                {{item.nome_proponente| camelCase}}
-                                recebeu {{item.valor_ob| currency: "R$"}}
-                                para o convênio "{{item.objeto_convenio| camelCase | limitTo: 50}}<span ng-if="item.objeto_convenio.length > 50">...</span>".
-                            </p>
-                        </div>
-                    </md-card-title-media>
-                </md-card-title>
-            </md-card>-->
         </md-tab>
 
     </md-tabs>

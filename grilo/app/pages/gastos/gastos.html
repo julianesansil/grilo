@@ -33,6 +33,10 @@
                     <br>
                     Órgão concedente: {{convenio.nome_orgao_concendente| camelCase}}
                 </h6>
+
+                <div class="margin8">
+                    <i>*Por enquanto, só mostramos os repasses recebidos, mas no app final colocaremos os repasses e <b>os gastos dos convênios</b> também.</i>
+                </div>
             </div>
         </div>
         <div style='min-width: 10px; margin-top: 10px; margin-left: 0px; margin-right: 0px;'>
@@ -48,17 +52,17 @@
             <md-card-title-text layout="row">
                 <div style="margin-top: 10px;">
                     <span class="md-subhead small-gray">
-                        {{item.data| date: 'dd/MM/yyyy'}}
+                        {{item.data | date: 'dd/MM/yyyy'}}
                     </span>
                 </div>
             </md-card-title-text>
             <md-card-title-media>
                 <div layout="column" class="md-media-sm card-media" style='margin-top: 0px'>
                     <div class='margin8'>
-                        {{item.observacao}}
+                        {{item.observacao | primeiraMaiuscula}}
                     </div>
                     <div class='margin8'>
-                        Valor: <b>{{item.valor| currency}}</b>
+                        Valor: <b>{{item.valor | currency}}</b>
                     </div>
                 </div>
         </md-card-title>

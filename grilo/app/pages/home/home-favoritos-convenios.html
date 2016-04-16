@@ -1,5 +1,5 @@
 <md-content style="padding-top: 10px;background-color: rgb(220, 222, 227);">
-    <md-card ng-repeat="item in conveniosFavoritos" ng-style="$index == 0 ? {'margin-top': '0px'} : false" style="padding-left: 8px;padding-right: 8px">   
+    <md-card ng-repeat="item in conveniosFavoritos" ng-style="$index == 0? {'margin-top':'-10px'} : false" style="padding-top: 10px; padding-left: 8px; padding-right: 8px">   
         <md-card-title>
             <md-card-title-text layout="row">
                 <div flex='80' style="margin-top: 10px;">
@@ -24,12 +24,12 @@
             <md-card-title-media>
                 <div layout="column" class="md-media-sm card-media" style='margin-top: -10px'>
                     <div class='margin8'>
-                        {{item.objeto | primeiraMaiuscula | limitTo: 100}}<span ng-if="item.objeto.length > 100">...</span>
+                        {{item.objeto| primeiraMaiuscula | limitTo: 100}}<span ng-if="item.objeto.length > 100">...</span>
                     </div>
                     <span class="margin8" title="Data de ínico e fim da vigência">
                         <md-icon><i class="material-icons">date_range</i></md-icon>
                         <span class="btn-action">
-                            {{item.data_inicio_vigencia | date: 'dd/MM/yyyy'}} - {{item.data_fim_vigencia| date: 'dd/MM/yyyy'}}
+                            {{item.data_inicio_vigencia| date: 'dd/MM/yyyy'}} - {{item.data_fim_vigencia| date: 'dd/MM/yyyy'}}
                         </span>
                     </span>
                     <div class='margin8'>
@@ -42,28 +42,8 @@
 
         <hr style="margin: 0px;">
 
-        <md-card-actions layout="row" layout-align="center center">
-            <md-button ng-click="comentar()">
-                <md-icon>
-                    <i class="material-icons">insert_comment</i>
-                </md-icon>
-                <span hide-sm class="btn-action">Comentar</span>
-            </md-button>
+        <div ng-include="'app/shared/md-card-action.html'"></div>
 
-            <md-button ng-click="denunciar()">
-                <md-icon>
-                    <i class="material-icons">email</i>
-                </md-icon>
-                <span hide-sm class="btn-action">Denunciar</span>
-            </md-button>
-
-            <md-button ng-click="compartilhar()">
-                <md-icon>
-                    <i class="material-icons">share</i>
-                </md-icon>
-                <span hide-sm class="btn-action">Compartilhar</span>
-            </md-button>
-        </md-card-actions>
     </md-card>
 
 </md-content>

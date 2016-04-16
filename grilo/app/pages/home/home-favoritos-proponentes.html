@@ -1,5 +1,5 @@
 <md-content style="padding-top: 10px; background-color: rgb(220, 222, 227);">
-    <md-card ng-repeat="item in proponentesFavoritos" ng-style="$index == 0 ? {'margin-top': '0px'} : false" style="padding-left: 8px; padding-right: 8px">   
+    <md-card ng-repeat="item in proponentesFavoritos" ng-style="$index == 0? {'margin-top':'-10px'} : false" style="padding-top: 10px; padding-left: 8px; padding-right: 8px">   
         <md-card-title>
             <md-card-title-text>
                 <div layout="row" style='margin-top: 10px'> 
@@ -57,27 +57,6 @@
 
         <hr style="margin: 0px;">
 
-        <md-card-actions layout="row" layout-align="center center">
-            <md-button ng-click="comentar()">
-                <md-icon>
-                    <i class="material-icons">insert_comment</i>
-                </md-icon>
-                <span hide-sm class="btn-action">Comentar</span>
-            </md-button>
-
-            <md-button ng-click="denunciar()">
-                <md-icon>
-                    <i class="material-icons">email</i>
-                </md-icon>
-                <span hide-sm class="btn-action">Denunciar</span>
-            </md-button>
-
-            <md-button ng-click="compartilhar()">
-                <md-icon>
-                    <i class="material-icons">share</i>
-                </md-icon>
-                <span hide-sm class="btn-action">Compartilhar</span>
-            </md-button>
-        </md-card-actions>
+        <div ng-include="'app/shared/md-card-action.html'"></div>
     </md-card>
 </md-content>
