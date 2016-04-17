@@ -39,23 +39,17 @@
                     <hr style="margin-top: 0px;">
 
                     <md-button class='infoprop' ng-href="tel:{{item.telefone}}" target="_blank">
-                        <md-icon>
-                            <i class="material-icons">local_phone</i> 
-                        </md-icon>
+                        <md-icon md-svg-src="assets/images/ic_phone_gray_24px.svg"></md-icon>
                         {{item.telefone}} 
                     </md-button>
 
                     <md-button  class='infoprop' ng-href="https://www.google.com/maps/search/{{item.endereco}}" target="_blank" style='margin-top: -10px'>
-                        <md-icon>
-                            <i class="material-icons">location_on</i> 
-                        </md-icon>
+                        <md-icon md-svg-src="assets/images/ic_location_on_gray_24px.svg"></md-icon>
                         {{item.endereco}}
                     </md-button>
                 </div>
             </md-card-title-media>
         </md-card-title>
-
-        <hr style="margin: 0px;">
 
         <div ng-include="'app/shared/md-card-action.html'"></div>
     </md-card>

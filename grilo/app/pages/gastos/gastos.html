@@ -19,9 +19,13 @@
     <div layout="row" style='margin-top: -3px'>
         <div flex="90">
             <div layout="column" style='margin-top: -3px'>
-                <h4 class='margin8' style="margin-bottom: 0px;">
-                    Convênio nº: {{convenio.numero_interno}}
-                </h4>
+                <a href="https://www.convenios.gov.br/siconv/ConsultarProposta/ResultadoDaConsultaDeConvenioSelecionarConvenio.do?Usr=guest&Pwd=guest&idConvenio=526393" target="_blank">
+                    <h4 class='margin8' style="margin-bottom: 0px;">
+                        Convênio nº: {{convenio.numero_interno}}
+                        <md-icon md-svg-src="assets/images/ic_open_in_new_gray_12px.svg" style="width: 16px"></md-icon>
+                    </h4>
+                </a>
+
                 <h6 class='margin8' style="margin-top: 0px;">
                     {{convenio.objeto | primeiraMaiuscula | limitTo: 80}}<span>... &nbsp;
                         <a href="javascript:;" ng-click="mostrarObjetoConvenio()"> Ver mais</a>

@@ -3,7 +3,7 @@
         <md-tabs md-stretch-tabs="always" md-dynamic-height="" md-border-bottom="">
             <md-tab label="aba1">
                 <md-tab-label>
-                    <md-icon md-svg-src="asstes/images/ic_dashboard_black_24px.svg" ></md-icon>
+                    <md-icon md-svg-src="assets/images/ic_dashboard_black_24px.svg"></md-icon>
                 </md-tab-label>
 
                 <md-content class="md-padding">
@@ -34,7 +34,7 @@
 
             <md-tab label="aba2">
                 <md-tab-label>
-                    <i class="material-icons" style="color: black">star</i>
+                    <md-icon md-svg-src="assets/images/ic_star_black_18px.svg"></md-icon>
                 </md-tab-label>
 
                 <md-content class="">
@@ -49,14 +49,15 @@
                             Você receberá notificações quando pessoas comentarem esses proponentes e convênios, mas é possível desativar as notificações.
                         </span>
                     </div>
+                    
                     <ng-include src="'app/pages/home/home-favoritos.html'" ng-if="carregadoOBs"/>
                 </md-content>
             </md-tab>
 
             <md-tab label="aba3">
                 <md-tab-label>
-                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                    <path fill="#000000" d="M20.2,2H19.5H18C17.1,2 16,3 16,4H8C8,3 6.9,2 6,2H4.5H3.8H2V11C2,12 3,13 4,13H6.2C6.6,15 7.9,16.7 11,17V19.1C8.8,19.3 8,20.4 8,21.7V22H16V21.7C16,20.4 15.2,19.3 13,19.1V17C16.1,16.7 17.4,15 17.8,13H20C21,13 22,12 22,11V2H20.2M4,11V4H6V6V11C5.1,11 4.3,11 4,11M20,11C19.7,11 18.9,11 18,11V6V4H20V11Z" />
+                    <svg style="width:24px; height:24px" viewBox="0 0 24 24">
+                        <path fill="#000000" d="M20.2,2H19.5H18C17.1,2 16,3 16,4H8C8,3 6.9,2 6,2H4.5H3.8H2V11C2,12 3,13 4,13H6.2C6.6,15 7.9,16.7 11,17V19.1C8.8,19.3 8,20.4 8,21.7V22H16V21.7C16,20.4 15.2,19.3 13,19.1V17C16.1,16.7 17.4,15 17.8,13H20C21,13 22,12 22,11V2H20.2M4,11V4H6V6V11C5.1,11 4.3,11 4,11M20,11C19.7,11 18.9,11 18,11V6V4H20V11Z" />
                     </svg>
                 </md-tab-label>
 
@@ -70,14 +71,14 @@
                             <b>Lista dos "3 mais", relacionados a proponentes e convênios em execução.</b>
                         </span>
                     </div>
-                    <ng-include src="'app/pages/home/home-ranking.html'"/>
 
+                    <ng-include src="'app/pages/home/home-ranking.html'"/>
                 </md-content>
             </md-tab>
 
             <md-tab label="aba4">
                 <md-tab-label>
-                    <i class="material-icons" style="color: black">credit_card</i>
+                    <md-icon md-svg-src="assets/images/ic_credit_card_black_24px.svg"></md-icon>  
                 </md-tab-label>
 
                 <md-content class="">
@@ -96,8 +97,8 @@
                             <i>*Por enquanto, só mostramos os repasses recebidos, mas no app final colocaremos os repasses e <b>os gastos dos convênios</b> também.</i>
                         </span>
                     </div>
-                    <ng-include src="'app/pages/home/home-feeds-bancarios.html'" ng-if="carregadoOBs"/>
 
+                    <ng-include src="'app/pages/home/home-feeds-bancarios.html'" ng-if="carregadoOBs"/>
                     <ng-include src="'app/pages/sem-conexao.html'" ng-if="erroOBs"/>
                 </md-content>
             </md-tab>

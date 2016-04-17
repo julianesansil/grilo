@@ -1,25 +1,22 @@
-<md-card-actions layout="row" layout-align="end center">
-    <a href='javascriptt:;' ng-click='comentar()'> 23 Comentários</a>
+<md-card-actions layout="row" layout-align="end center" style="padding-bottom: 7px; padding-right: 10px;">
+    <a href='javascriptt:;' ng-click='comentar()'>23 Comentários</a>
 </md-card-actions>
+
+<hr style="margin: 0px;">
+
 <md-card-actions layout="row" layout-align="center center">
     <md-button ng-click="comentar()">
-        <md-icon>
-            <i class="material-icons">insert_comment</i>
-        </md-icon>
+        <md-icon md-svg-src="assets/images/ic_comment_gray_24px.svg"></md-icon>
         <span hide-sm class="btn-action">Comentar</span>
     </md-button>
 
     <md-button ng-click="denunciar()">
-        <md-icon>
-            <i class="material-icons">email</i>
-        </md-icon>
+        <md-icon md-svg-src="assets/images/ic_email_gray_24px.svg"></md-icon>
         <span hide-sm class="btn-action">Denunciar</span>
     </md-button>
 
     <md-button ng-click="compartilhar()">
-        <md-icon>
-            <i class="material-icons">share</i>
-        </md-icon>
+        <md-icon md-svg-src="assets/images/ic_share_gray_24px.svg"></md-icon>
         <span hide-sm class="btn-action">Compartilhar</span>
     </md-button>
 </md-card-actions>

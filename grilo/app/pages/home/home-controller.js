@@ -362,6 +362,8 @@ function DialogLocalizacaoController($scope, $mdDialog, Services, SessionStorage
     };
 
     $scope.carregarMunicipios = function (uf) {
+        delete $scope.filtro.municipio;
+        
         Services.listarMunicipios(uf).then(
                 function (response) {
                     $scope.municipios = response.data;

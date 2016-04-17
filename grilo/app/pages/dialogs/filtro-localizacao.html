@@ -4,13 +4,13 @@
             <md-input-container class="md-icon-float ">
                 <label style="margin-left: 0px">Estado</label>
                 <md-select style="margin-top: 15px;padding-bottom: 0px;"  placeholder="Estado" ng-model="filtro.estado" required="" ng-change="carregarMunicipios(filtro.estado)">
-                    <md-option ng-repeat="estado in estados" value={{estado.sigla}}>{{estado.nome| camelCase}}</md-option>
+                    <md-option ng-repeat="estado in estados" value={{estado.sigla}}>{{estado.nome | camelCase}}</md-option>
                 </md-select>
             </md-input-container>
             <md-input-container class="md-icon-float">
                 <label style="margin-left: 0px">Cidade</label>
                 <md-select style="margin-top: 15px;padding-bottom: 0px;"  placeholder="Cidade" ng-model="filtro.municipio" ng-model-options="{trackBy: '$value.id'}" required="" ng-disabled="!filtro.estado">
-                    <md-option ng-repeat="municipio in municipios" ng-value={{municipio}}>{{municipio.nome| camelCase}}</md-option>
+                    <md-option ng-repeat="municipio in municipios" ng-value={{municipio}}>{{municipio.nome | camelCase}}</md-option>
                 </md-select>
             </md-input-container>
         </md-content>

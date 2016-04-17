@@ -81,10 +81,10 @@
             <md-card-title-media>
                 <div layout="column" class="md-media-sm card-media" style='margin-top: -10px'>
                     <div class='margin8'>
-                        {{item.objeto| primeiraMaiuscula | limitTo: 100}}<span ng-if="item.objeto.length > 100">...</span>
+                        {{item.objeto | primeiraMaiuscula | limitTo: 90}}<span ng-if="item.objeto.length > 100">...</span>
                     </div>
                     <span class="margin8" title="Data de ínico e fim da vigência">
-                        <md-icon><i class="material-icons">date_range</i></md-icon>
+                        <md-icon md-svg-src="assets/images/ic_date_range_gray_24px.svg"></md-icon>
                         <span class="btn-action">
                             {{item.data_inicio_vigencia| date: 'dd/MM/yyyy'}} - {{item.data_fim_vigencia| date: 'dd/MM/yyyy'}}
                         </span>
@@ -92,14 +92,10 @@
                     <div class='margin8'>
                         Valor: <b>{{item.valor_global| currency}}</b>
                     </div>
-
                 </div>
             </md-card-title-media>
         </md-card-title>
 
-        <hr style="margin: 0px;">
-
         <div ng-include="'app/shared/md-card-action.html'"></div>
-
     </md-card>
 </md-content>
