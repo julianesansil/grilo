@@ -21,6 +21,7 @@ Baixe o projeto ou clone o repositório, baixe o dump do banco do SICONV [dump](
 Copie os arquivos para o www do apache, pasta grilo-ws é o serviço que será utilizado pela aplicação na pasta grilo.
 
 Altere o arquivo conexao.php na pasta \grilo\grilo-ws com os dados de conexão ao banco de dados.
+
 Altere o arquivo app.filters.js na pasta \grilo\grilo\app com os dados de conexão do serviço.
 
 Acesse localhost/grilo para navegar na aplicação.
