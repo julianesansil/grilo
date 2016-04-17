@@ -16,7 +16,7 @@ O projeto se divide em duas partes:
 ### Instalação
 Requisitos: Apache, PHP e PostgreSQL
 
-Baixe o projeto ou clone o repositório, baixe o dump do banco do SICONV [dump](http://repositorio.dados.gov.br/economia-financas/encargos-financeiros/transferencias-financeiras/API_siconv_140515.zip) em PostgreSQL.
+Baixe o projeto ou clone o repositório, baixe o [dump](http://repositorio.dados.gov.br/economia-financas/encargos-financeiros/transferencias-financeiras/API_siconv_140515.zip) do banco do SICONV em PostgreSQL.
 
 Copie os arquivos para o www do apache, pasta grilo-ws é o serviço que será utilizado pela aplicação na pasta grilo.
 
