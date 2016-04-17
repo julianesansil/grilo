@@ -18,7 +18,7 @@
         url(MaterialIcons-Regular.woff) format('woff'),
         url(MaterialIcons-Regular.ttf) format('truetype');
 }
-.<md-icon md-svg-src="assets/images/ic_search_black_24px.svg"  ></md-icon> {
+.material-icons{
     font-family: 'Material Icons';
     font-weight: normal;
     font-style: normal;
