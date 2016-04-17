@@ -1,16 +1,16 @@
 <md-toolbar class="animate-show">
     <div class="md-toolbar-tools" layout='row' layout-align="end center">
-        <md-button ng-click="mostrarDialogLocalizacao()" style="min-width: 10px;">
+        <md-button ng-click="mostrarDialogLocalizacao()" style="min-width: 10px; margin-bottom: 7px;">
             <md-icon md-svg-src="assets/images/ic_filter_list_white_24px.svg"></md-icon>
         </md-button>
 
-        <span ng-show="!!municipio" style="margin-right: 10px;"> 
+        <span ng-show="!!municipio" style="margin-right: 10px; margin-bottom: 5px;"> 
             {{municipio.nome| limitTo: 10}}<span ng-if="municipio.nome.length > 10">...</span> - {{estado}}
         </span>
 
         <span flex></span>
 
-        <md-button ng-click="mostrarDialogSobre()" style='min-width: 10px'>
+        <md-button ng-click="mostrarDialogSobre()" style='min-width: 10px; margin-bottom: 3px;'>
             <md-icon md-svg-src="assets/images/ic_help_outline_white_24px.svg"></md-icon>
         </md-button>
     </div>
