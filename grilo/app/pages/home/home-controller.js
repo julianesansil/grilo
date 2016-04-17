@@ -53,7 +53,7 @@ app.controller('HomeController', function ($scope, $rootScope, $location, $mdDia
             controller: DialogTextoController,
             templateUrl: 'app/pages/dialogs/sobre.html',
             scope: $scope.$new(),
-            clickOutsideToClose: false
+            clickOutsideToClose: true
         });
     };
 

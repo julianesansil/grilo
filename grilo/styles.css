@@ -1,4 +1,5 @@
-body {
+
+* {
     font-family: 'Roboto';
 }
 
@@ -32,6 +33,15 @@ md-grid-tile-footer figcaption {
 
 md-list-item.md-3-line .md-list-item-text h3 {
     line-height: inherit;
+}
+
+md-grid-tile[ng-click] {
+    cursor: pointer;
+}
+
+md-list md-list-item.md-3-line .md-list-item-text p{
+   font-weight: normal;
+   color: #000;
 }
 
 .text-center { 
@@ -109,12 +119,6 @@ md-list-item.md-3-line .md-list-item-text h3 {
     margin-top: -5px;
 }
 
-@media screen and (min-width: 380px) {
-    .tituloArea{
-        font-size: 17px;
-    }
-}
-
 .gray{
     color:#A5A0A0;
 }
@@ -139,9 +143,13 @@ md-list-item.md-3-line .md-list-item-text h3 {
     margin-left: auto;
     margin-right: auto; 
 }
+
 i[ng-click] {
     cursor: pointer;
 }
-md-grid-tile[ng-click] {
-    cursor: pointer;
+
+@media screen and (min-width: 380px) {
+    .tituloArea{
+        font-size: 17px;
+    }
 }
