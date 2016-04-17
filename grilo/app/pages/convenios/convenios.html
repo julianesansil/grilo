@@ -17,11 +17,11 @@
 <md-content ng-style="{'background': areaAtuacao.cor}" ng-if="carregado && conveniosTela">
     <div layout="row">
         <div flex='90'>
-            <h4 class="margin8">{{proponente.nome | camelCase}}</h4>
+            <h4 class="margin8">{{proponente.nome| camelCase}}</h4>
             <!--<h5 class="margin8">{{proponente.nome_esfera | camelCase}}</h5>-->
-            <h6 class="margin8">Responsável: {{proponente.nome_responsavel | camelCase}}</h6>
+            <h6 class="margin8">Responsável: {{proponente.nome_responsavel| camelCase}}</h6>
             <div class="margin8">
-                Possui <b>{{proponente.total_convenios}} convênio<span ng-hide="proponente.total_convenio == '1'">s</span></b> em execução que soma<span ng-show="proponente.total_global > 1">m</span> <b>{{proponente.total_global | currency}}</b>.
+                Possui <b>{{proponente.total_convenios}} convênio<span ng-hide="proponente.total_convenio == '1'">s</span></b> em execução que soma<span ng-show="proponente.total_global > 1">m</span> <b>{{proponente.total_global| currency}}</b>.
             </div>
         </div>
 
@@ -36,7 +36,14 @@
 </md-content>
 
 <div layout="column" ng-if="carregado && conveniosTela" ng-cloak>
+
     <md-content class="md-padding">
+        <p style="margin-bottom: 0px;">
+            Para ver prestação de contas, clique em <md-icon style="width: 18px" md-svg-src="assets/images/ic_search_gray_24px.svg"></md-icon>.
+        </p>
+        <p style="margin-top: -3px;">
+            Para favoritar, clique em <md-icon style="width: 18px" md-svg-src="assets/images/ic_star_gray_18px.svg"></md-icon>.
+        </p>
         <md-autocomplete
             md-search-text="query"
             md-items="item in pesquisarQuery(query)"
@@ -83,7 +90,7 @@
             <md-card-title-media>
                 <div layout="column" class="md-media-sm card-media" style='margin-top: -10px'>
                     <div class='margin8'>
-                        {{item.objeto | primeiraMaiuscula | limitTo: 90}}<span ng-if="item.objeto.length > 100">...</span>
+                        {{item.objeto| primeiraMaiuscula | limitTo: 90}}<span ng-if="item.objeto.length > 100">...</span>
                     </div>
                     <span class="margin8" title="Data de ínico e fim da vigência">
                         <md-icon md-svg-src="assets/images/ic_date_range_gray_24px.svg"></md-icon>
