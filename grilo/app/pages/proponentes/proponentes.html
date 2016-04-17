@@ -55,15 +55,15 @@
 
                     <div flex='10'>
                         <div style="min-width: 10px; margin-top: 15px; margin-left: 0px; margin-right: 0px;">
-                            <i class="material-icons" ng-click="favoritarOuDesfavoritarProponente(item)" style="{{item.corEstrela}} outline: none;">star</i>
+                            <md-icon md-svg-src="assets/images/ic_star_gray_18px.svg" ng-click="favoritarOuDesfavoritarProponente(item)" ng-if="!item.corEstrela"></md-icon>
+
+                            <md-icon md-svg-src="assets/images/ic_star_yellow_18px.svg" ng-click="favoritarOuDesfavoritarProponente(item)" ng-if="item.corEstrela"></md-icon>
                         </div>
                     </div>
 
                     <div flex='10'>
                         <md-button style='min-width: 10px; margin-top: 10px; margin-left: 0px; margin-right: 0px;' ng-click="go('/convenios', item)">
-                            <md-icon>
-                                <i class="material-icons">search</i>
-                            </md-icon>
+                            <md-icon md-svg-src="assets/images/ic_search_gray_24px.svg"></md-icon>
                         </md-button>
                     </div>
                 </div>

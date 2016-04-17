@@ -209,27 +209,27 @@ if (isset($arr["cidadesMaisCaras"]["data"])) {
 //pr($arr["conveniosMaisCaros"]);exit;
 
 foreach ($arr["areasMaisCaras"]["data"] as $value) {
-    $a["data"][] = html_entity_decode("A área de <b>{$value["descricao"]}</b> possui {$value["total_convenio"]} convênios somando um total de <b>R$ " . number_format($value["total"], 2, ',', '.') . "</b>.");
+    $a["data"][] = html_entity_decode("A área de <b>" . mb_strtolower($value["descricao"], 'UTF-8') . "</b> possui {$value["total_convenio"]} convênios somando um total de <b>R$" . number_format($value["total"], 2, ',', '.') . "</b>.");
 }
 foreach ($arr["proponentesMaisCaros"]["data"] as $value) {
-    $b["data"][] = html_entity_decode("O proponente <b>{$value["nome"]}</b> possui {$value["total_convenio"]} convênios somando um total de <b>R$ " . number_format($value["total"], 2, ',', '.') . "</b>.");
+    $b["data"][] = html_entity_decode("O proponente <b>" . ucwords(strtolower($value["nome"])) . "</b> possui {$value["total_convenio"]} convênios somando um total de <b>R$" . number_format($value["total"], 2, ',', '.') . "</b>.");
 }
 foreach ($arr["proponentesMaisConvenios"]["data"] as $value) {
-    $c["data"][] = html_entity_decode("O proponente <b>" . $value["nome"] . "</b> possui {$value["total"]} convênios somando um total de <b>R$ " . number_format($value["total_convenio"], 2, ',', '.') . "</b>.");
+    $c["data"][] = html_entity_decode("O proponente <b>" . ucwords(strtolower($value["nome"])) . "</b> possui {$value["total"]} convênios somando um total de <b>R$" . number_format($value["total_convenio"], 2, ',', '.') . "</b>.");
 }
 foreach ($arr["conveniosMaisCaros"]["data"] as $value) {
-    $d["data"][] = html_entity_decode("O convênio <b>" . substr($value["objeto"],0, 50) . "...</b> (<b>{$value["numero_interno"]}</b>), do proponente {$value["nome"]}, tem o valor global de <b>R$ " . number_format($value["valor_global"], 2, ',', '.') . "</b>.");
+    $d["data"][] = html_entity_decode("O convênio <b>" . mb_substr($value["objeto"], 0, 80, 'UTF-8') . "...</b> (<b>{$value["numero_interno"]}</b>), do proponente " . ucwords(strtolower($value["nome"])) . ", tem o valor global de <b>R$" . number_format($value["valor_global"], 2, ',', '.') . "</b>.");
 }
 
 foreach ($arr["concedentesMaisDinheiro"]["data"] as $value) {
-    $e["data"][] = html_entity_decode("O orgão <b>" . $value["orgao"] . "</b>  concede R$ " . number_format($value["total"], 2, ',', '.') . "</b> para {$value["total_convenio"]} convênios.");
+    $e["data"][] = html_entity_decode("O orgão <b>" . ucwords(strtolower($value["orgao"])) . "</b>  concede <b>R$" . number_format($value["total"], 2, ',', '.') . "</b> para {$value["total_convenio"]} convênios.");
 }
 foreach ($arr["responsaveisMaisConvenios"]["data"] as $value) {
-    $f["data"][] = html_entity_decode("<b>" . $value["nome"] . "</b> é responsável por <b> {$value["total"]} proponentes </b> ao mesmo tempo.");
+    $f["data"][] = html_entity_decode("<b>" . ucwords(strtolower($value["nome"])) . "</b> é responsável por <b> {$value["total"]} proponentes </b> ao mesmo tempo.");
 }
 if (isset($arr["cidadesMaisCaras"]["data"])) {
     foreach ($arr["cidadesMaisCaras"]["data"] as $value) {
-        $g["data"][] = html_entity_decode("<b>" . $value["nome"] . "</b> tem {$value["total_convenio"]} convênios em execução, somando <b> R$ " . number_format($value["valor_global"], 2, ',', '.') . "<b>.");
+        $g["data"][] = html_entity_decode("<b>" . ucwords(strtolower($value["nome"])) . "</b> tem {$value["total_convenio"]} convênios em execução, somando <b> R$" . number_format($value["valor_global"], 2, ',', '.') . "<b>.");
     }
 }
 

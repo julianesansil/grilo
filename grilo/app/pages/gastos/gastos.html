@@ -38,12 +38,14 @@
             </div>
         </div>
         <div style='min-width: 10px; margin-top: 10px; margin-left: 0px; margin-right: 0px;'>
-            <i class="material-icons" ng-click="favoritarOuDesfavoritarConvenio(convenio)" style="{{convenio.corEstrela}} outline: none;">star</i>
+            <md-icon md-svg-src="assets/images/ic_star_gray_18px.svg" ng-click="favoritarOuDesfavoritarConvenio(convenio)" ng-if="!convenio.corEstrela"></md-icon>
+
+            <md-icon md-svg-src="assets/images/ic_star_yellow_18px.svg" ng-click="favoritarOuDesfavoritarConvenio(convenio)" ng-if="convenio.corEstrela"></md-icon>
         </div>
     </div>
 </md-content>
 
-<div class="margin8" style="margin-bottom: 0px;">
+<div class="margin8" style="margin-bottom: 0px;" ng-if="carregado && gastos">
     <i>*Por enquanto, só mostramos os repasses recebidos, mas no app final colocaremos os repasses e <b>os gastos dos convênios</b> também.</i>
 </div>
 
