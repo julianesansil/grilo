@@ -19,23 +19,17 @@
     <div layout="row" style='margin-top: -3px'>
         <div flex="90">
             <div layout="column" style='margin-top: -3px'>
-                <h4 class='margin8'>
+                <h4 class='margin8' style="margin-bottom: 0px;">
                     Convênio nº: {{convenio.numero_interno}}
                 </h4>
-                <div class='margin8'>
-                    {{convenio.objeto| primeiraMaiuscula | limitTo: 100}}<span>... &nbsp;
+                <h6 class='margin8' style="margin-top: 0px;">
+                    {{convenio.objeto | primeiraMaiuscula | limitTo: 80}}<span>... &nbsp;
                         <a href="javascript:;" ng-click="mostrarObjetoConvenio()"> Ver mais</a>
                     </span>
-                </div>
-
-                <h6 class='margin8'>
-                    Valor: <b>{{convenio.valor_global| currency}}</b>
-                    <br>
-                    Órgão concedente: {{convenio.nome_orgao_concendente| camelCase}}
                 </h6>
 
-                <div class="margin8">
-                    <i>*Por enquanto, só mostramos os repasses recebidos, mas no app final colocaremos os repasses e <b>os gastos dos convênios</b> também.</i>
+                <div class='margin8'>
+                    O valor do convênio é de <b>{{convenio.valor_global | currency}}</b>, a ser concedido pelo(a) <b>{{convenio.nome_orgao_concendente | camelCase}}</b>
                 </div>
             </div>
         </div>
@@ -43,11 +37,14 @@
             <i class="material-icons" ng-click="favoritarOuDesfavoritarConvenio(convenio)" style="{{convenio.corEstrela}} outline: none;">star</i>
         </div>
     </div>
-
 </md-content>
 
+<div class="margin8" style="margin-bottom: 0px;">
+    <i>*Por enquanto, só mostramos os repasses recebidos, mas no app final colocaremos os repasses e <b>os gastos dos convênios</b> também.</i>
+</div>
+
 <md-content style="padding-top: 10px;background-color: rgb(220, 222, 227);">
-    <md-card ng-repeat="item in gastos" ng-style="$index == 0 ? {'margin-top': '0px'} : false" style="padding-left: 8px;padding-right: 8px">   
+    <md-card ng-repeat="item in gastos" ng-style="$index == 0 ? {'margin-top': '0px'} : false" style="padding-left: 8px;padding-right: 8px">
         <md-card-title>
             <md-card-title-text layout="row">
                 <div style="margin-top: 10px;">
