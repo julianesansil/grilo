@@ -1,13 +1,14 @@
 <md-dialog>
     <div ng-if="!erroLocalizacao">
         <md-content class="md-padding">
-            <md-input-container class="md-icon-float ">
+            <md-input-container class="md-icon-float" style="padding-bottom: 10px;">
                 <label style="margin-left: 0px">Estado</label>
                 <md-select style="margin-top: 15px;padding-bottom: 0px;"  placeholder="Estado" ng-model="filtro.estado" required="" ng-change="carregarMunicipios(filtro.estado)">
                     <md-option ng-repeat="estado in estados" value={{estado.sigla}}>{{estado.nome | camelCase}}</md-option>
                 </md-select>
             </md-input-container>
-            <md-input-container class="md-icon-float">
+
+            <md-input-container class="md-icon-float" style="padding-bottom: 10px;">
                 <label style="margin-left: 0px">Cidade</label>
                 <md-select style="margin-top: 15px;padding-bottom: 0px;"  placeholder="Cidade" ng-model="filtro.municipio" ng-model-options="{trackBy: '$value.id'}" required="" ng-disabled="!filtro.estado">
                     <md-option ng-repeat="municipio in municipios" ng-value={{municipio}}>{{municipio.nome | camelCase}}</md-option>
@@ -15,7 +16,7 @@
             </md-input-container>
         </md-content>
 
-        <div class="md-actions" layout="row" style="padding-left: 8px"> 
+        <div class="md-actions" layout="row" style="padding-left: 8px; padding-bottom: 8px"> 
             <md-button ng-click="filtrar(filtro.municipio)" class="md-raised md-primary" ng-disabled="!filtro.municipio" style="width: 100%; margin-right:8px;">
                 Filtrar
             </md-button>

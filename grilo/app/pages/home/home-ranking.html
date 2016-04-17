@@ -26,7 +26,9 @@
             <md-card ng-repeat="item in rankingMunicipal" ng-style="$index == 0? {'margin-top':'-10px'} : false" style="padding-top: 10px; padding-left: 8px; padding-right: 8px">
                 <md-card-title>
                     <md-card-title-text>
-                        <p class="md-subhead" style="text-align:center; margin-bottom: 0px;"><b>{{item.titulo}}</b></p>
+                        <p class="md-subhead" style="text-align:center; margin-bottom: 0px;">
+                            <b>{{item.titulo}}</b>
+                        </p>
                     </md-card-title-text>
 
                     <md-card-title-media>
@@ -78,15 +80,17 @@
             <md-card ng-repeat="item in rankingNacional" ng-style="$index == 0? {'margin-top':'-10px'} : false" style="padding-top: 10px; padding-left: 8px; padding-right: 8px">
                 <md-card-title>
                     <md-card-title-text>
-                        <span class="md-subhead"><b>{{item.titulo}}</b></span>
+                        <p class="md-subhead" style="text-align:center; margin-bottom: 0px;">
+                            <b>{{item.titulo}}</b>
+                        </p>
                     </md-card-title-text>
 
                     <md-card-title-media>
                         <div class="md-media-sm card-media">
                             <md-content>
-                                <md-list>
+                                <md-list style="padding-bottom: 0px;">
                                     <md-list-item class="md-3-line" ng-repeat="subitem in item.data">
-                                        <div class="md-list-item-text">
+                                        <div class="md-list-item-text" style="padding-top: 7px; padding-bottom: 7px">
                                             <p ng-bind-html="subitem | to_trusted"></p>
                                         </div>
     

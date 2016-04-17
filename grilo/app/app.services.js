@@ -1,7 +1,7 @@
 app.factory("Services", function($http) {
     function _get(url) {
-        // return $http.get("http://cpro26850.publiccloud.com.br/grilo-ws/" + url);   
-        return $http.get("http://localhost/grilo/grilo-ws" + url);
+        return $http.get("http://cpro26850.publiccloud.com.br/grilo-ws/" + url);   
+        // return $http.get("http://localhost/grilo/grilo-ws" + url);
     };
 
     function _listarEstados() {
