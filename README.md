@@ -1,9 +1,5 @@
 # Grilo
 
-**Link demo**: http://cpro26850.publiccloud.com.br/grilo/
-
-**Link do vídeo**: http://cpro26850.publiccloud.com.br/Grilo_-_Video_explicativo.mp4
-
 O projeto se divide em duas partes:
 - Webservice
     - Feito em linguagem PHP  para facilitar o consumo dos dados dos convênios para ser utilizado na aplicação;
