@@ -5,7 +5,7 @@ No Grilo, o usuário pode ver os gastos realizados pelo governo na área da educ
 
 O aplicativo foi desenvolvido como proposta para a "Hackathon sobre Participação no Combate à Corrupção" do Ministério da Justiça, utilizando os dados abertos do SICONV.
 
-O projeto se divide em duas partes:
+### O projeto se divide em duas partes:
 - Webservice
     - Feito em linguagem PHP  para facilitar o consumo dos dados dos convênios para ser utilizado na aplicação;
     - Foi utilizado o [dump](http://repositorio.dados.gov.br/economia-financas/encargos-financeiros/transferencias-financeiras/API_siconv_140515.zip) do banco de dados em PostgreSQL com a versão datada de 15/05/2014, fornecido pela [API de convênios](http://api.convenios.gov.br/siconv/doc/).
