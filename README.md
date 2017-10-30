@@ -1,5 +1,10 @@
 # Grilo
 
+Grilo é um aplicativo desenvolvido com o objetivo de apresentar os convênios cadastrados no SICONV (Sistema de Convênios do Ministério do Planejamento) de maneira dinâmica e transparente.  
+No Grilo, o usuário pode ver os gastos realizados pelo governo na área da educação, saúde, esporte, entre outros. O usuário também pode fazer comentários/enviar fotos sobre os projetos do convênio e visualizar um "feed bancário" dos repasses feitos aos convênios.
+
+O aplicativo foi desenvolvido como proposta para a "Hackathon sobre Participação no Combate à Corrupção" do Ministério da Justiça, utilizando os dados abertos do SICONV.
+
 O projeto se divide em duas partes:
 - Webservice
     - Feito em linguagem PHP  para facilitar o consumo dos dados dos convênios para ser utilizado na aplicação;
