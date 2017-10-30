@@ -17,10 +17,10 @@ O aplicativo foi desenvolvido como proposta para a "Hackathon sobre Participaç�
 ### Instalação
 Requisitos: Apache, PHP e PostgreSQL
 
-1. Baixe o projeto ou clone o repositório, baixe o [dump](http://repositorio.dados.gov.br/economia-financas/encargos-financeiros/transferencias-financeiras/API_siconv_140515.zip) do banco do SICONV em PostgreSQL.
-2. Copie os arquivos para o www do apache, pasta \grilo\grilo-ws é o serviço que será utilizado pela aplicação na pasta grilo.
-3. Altere o arquivo conexao.php na pasta \grilo\grilo-ws com os dados de conexão ao banco de dados.
-4. Altere o arquivo app.filters.js na pasta \grilo\grilo\app com os dados de conexão do serviço.
+1. Baixe o projeto ou clone o repositório, baixe o [dump](http://repositorio.dados.gov.br/economia-financas/encargos-financeiros/transferencias-financeiras/API_siconv_140515.zip) do banco do SICONV em PostgreSQL;
+2. Copie os arquivos para o www do apache, pasta \grilo\grilo-ws é o serviço que será utilizado pela aplicação na pasta grilo;
+3. Altere o arquivo conexao.php na pasta \grilo\grilo-ws com os dados de conexão ao banco de dados;
+4. Altere o arquivo app.filters.js na pasta \grilo\grilo\app com os dados de conexão do serviço;
 5. Acesse localhost/grilo para navegar na aplicação.
 
 # License
